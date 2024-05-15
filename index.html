@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>news portal</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header class="bg-slate-500 p-4">
+      <nav>
+        <div id="cat-news" class="flex justify-around"></div>
+
+        <div>
+          <input
+            id="search-input"
+            type="text"
+            placeholder="typing here"
+            class="w-2/3 h-10 rounded-md p-5 mt-6"
+          />
+          <button onclick="handleSearch()" class="btn">Search...</button>
+        </div>
+      </nav>
+    </header>
+    <div id="loading-spinner" class="text-center mt-52 hidden">
+      <span class="loading loading-spinner loading-md"></span>
+    </div>
+    <main id="all-news-container" class="p-6">
+     
+    </main>
+    <p id="no-data" class="hidden">no data found</p>
+    <div>
+      <!-- Open the modal using ID.showModal() method -->
+      <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+          <h3 id="modal-heading" class="font-bold text-lg"></h3>
+          <p id="modal-details" class="py-4">Press ESC key or click the button below to close</p>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </div>
+
+    <script src="news.js"></script>
+  </body>
+</html>
